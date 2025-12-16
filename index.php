@@ -1,6 +1,6 @@
-<?php 
+<?php
 require_once 'auth.php';
-require_login(); 
+require_login();
 ?>
 <!DOCTYPE html>
 <html lang="th">
@@ -12,13 +12,16 @@ require_login();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="icon" href="assets/img/devclub-favicon.svg" type="image/svg+xml">
 </head>
 
 <body class="bg-light">
     <?php $display = $_SESSION['display_name'] ?? $_SESSION['username'] ?? 'ผู้ใช้'; ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom mb-3">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.php">🚀 DevClub</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.php"><img
+                    src="assets/img/devclub-logo.svg" alt="DevClub" class="logo"> <span
+                    class="brand-text">DevClub</span></a>
             <div class="d-flex align-items-center">
                 <span class="me-3 text-muted">สวัสดี, <?= htmlspecialchars($display); ?></span>
                 <a href="logout.php" class="btn btn-outline-secondary btn-sm">ออกจากระบบ</a>
@@ -28,7 +31,7 @@ require_login();
     <div class="container mt-5">
         <div class="card shadow-sm">
             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                <h4 class="mb-0">🚀 สมาชิกชมรม DevClub</h4>
+                <h4 class="mb-0"><img src="assets/img/devclub-logo.svg" alt="" class="logo me-2">สมาชิกชมรม DevClub</h4>
                 <a href="form.php" class="btn btn-light btn-sm fw-bold">+ เพิ่มสมาชิก</a>
             </div>
             <div class="card-body">

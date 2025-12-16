@@ -22,13 +22,16 @@ if ($id) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="icon" href="assets/img/devclub-favicon.svg" type="image/svg+xml">
 </head>
 
 <body class="bg-light">
     <?php $display = $_SESSION['display_name'] ?? $_SESSION['username'] ?? 'ผู้ใช้'; ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom mb-3">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.php">🚀 DevClub</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.php"><img
+                    src="assets/img/devclub-logo.svg" alt="DevClub" class="logo"> <span
+                    class="brand-text">DevClub</span></a>
             <div class="d-flex align-items-center">
                 <span class="me-3 text-muted">สวัสดี, <?= htmlspecialchars($display); ?></span>
                 <a href="logout.php" class="btn btn-outline-secondary btn-sm">ออกจากระบบ</a>
@@ -38,7 +41,9 @@ if ($id) {
     <div class="container mt-5" style="max-width: 600px;">
         <div class="card shadow">
             <div class="card-header bg-dark text-white">
-                <h4 class="mb-0"><?= $id ? '✏️ แก้ไขข้อมูลสมาชิก' : '➕ เพิ่มสมาชิกใหม่'; ?></h4>
+                <h4 class="mb-0">
+                    <?= $id ? '<img src="assets/img/devclub-logo.svg" alt="" class="logo me-2">✏️ แก้ไขข้อมูลสมาชิก' : '<img src="assets/img/devclub-logo.svg" alt="" class="logo me-2">➕ เพิ่มสมาชิกใหม่'; ?>
+                </h4>
             </div>
             <div class="card-body">
                 <form action="save.php" method="POST">

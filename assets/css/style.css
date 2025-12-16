@@ -61,3 +61,19 @@ body {
     padding-right: 0.5rem;
   }
 }
+
+/* Logo styles */
+.navbar-brand .logo,
+.logo {
+  height: 24px;
+}
+.navbar-brand .brand-text {
+  margin-left: 8px;
+  font-weight: 700;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand .brand-text {
+    display: none; /* hide brand text on very small screens */
+  }
+}
